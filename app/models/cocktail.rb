@@ -1,5 +1,7 @@
 class Cocktail < ActiveRecord::Base
   has_many :measured_ingredients
 
-  validates_presence_of :name
+  validates :name, :presence   => true,
+                   :uniqueness => true
+
 end

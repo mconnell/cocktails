@@ -7,5 +7,12 @@ describe Cocktail do
       assert_equal false, cocktail.valid?
       assert cocktail.errors[:name].present?
     end
+
+    it "requires a unique name" do
+      Cocktail.create!(:name => 'Cooler')
+      cocktail = Cocktail.new(:name => 'Cooler')
+      assert_equal false, cocktail.valid?
+      assert cocktail.errors[:name].present?
+    end
   end
 end

@@ -7,5 +7,12 @@ describe Ingredient do
       assert_equal false, ingredient.valid?
       assert ingredient.errors[:name].present?
     end
+
+    it "requires a unique name" do
+      Ingredient.create!(:name => 'Soda Water')
+      ingredient = Ingredient.new(:name => 'Soda Water')
+      assert_equal false, ingredient.valid?
+      assert ingredient.errors[:name].present?
+    end
   end
 end
