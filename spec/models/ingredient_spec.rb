@@ -10,7 +10,7 @@ describe Ingredient do
 
     it "requires a unique name" do
       Ingredient.create!(:name => 'Soda Water')
-      ingredient = Ingredient.new(:name => 'Soda Water')
+      ingredient = Ingredient.new(:name => 'SODA Water')
       assert_equal false, ingredient.valid?
       assert ingredient.errors[:name].present?
     end

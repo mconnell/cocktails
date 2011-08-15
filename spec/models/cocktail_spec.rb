@@ -10,7 +10,7 @@ describe Cocktail do
 
     it "requires a unique name" do
       Cocktail.create!(:name => 'Cooler')
-      cocktail = Cocktail.new(:name => 'Cooler')
+      cocktail = Cocktail.new(:name => 'CoOLEr')
       assert_equal false, cocktail.valid?
       assert cocktail.errors[:name].present?
     end

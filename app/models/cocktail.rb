@@ -4,6 +4,6 @@ class Cocktail < ActiveRecord::Base
   accepts_nested_attributes_for :measured_ingredients
 
   validates :name, :presence   => true,
-                   :uniqueness => true
+                   :uniqueness => { :case_sensitive => false }
 
 end

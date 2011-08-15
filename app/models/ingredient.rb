@@ -1,6 +1,6 @@
 class Ingredient < ActiveRecord::Base
 
   validates :name, :presence   => true,
-                   :uniqueness => true
+                   :uniqueness => { :case_sensitive => false }
 
 end
