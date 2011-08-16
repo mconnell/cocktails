@@ -1,0 +1,5 @@
+.measured_ingredient_form_fields
+  = form.input :ingredient_id, :collection => Ingredient.all, :prompt => '-- Select an Ingredient --'
+  = form.input :measure
+
+  = remove_child_link 'Remove', form

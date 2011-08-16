@@ -1,0 +1,10 @@
+%p
+  %b name
+  = @cocktail.name
+
+- @cocktail.measured_ingredients.each do |measured_ingredient|
+  = measured_ingredient.ingredient.try(:name)
+  = measured_ingredient.measure
+
+= link_to 'Edit', edit_cocktail_path(@cocktail)
+= link_to 'Back', cocktails_path

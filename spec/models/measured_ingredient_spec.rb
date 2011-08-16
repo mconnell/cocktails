@@ -13,11 +13,5 @@ describe MeasuredIngredient do
       assert_equal false, measured_ingredient.valid?
       assert measured_ingredient.errors[:ingredient].present?
     end
-
-    it "requires a cocktail" do
-      measured_ingredient = MeasuredIngredient.new(:cocktail => nil)
-      assert_equal false, measured_ingredient.valid?
-      assert measured_ingredient.errors[:cocktail].present?
-    end
   end
 end
