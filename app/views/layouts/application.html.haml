@@ -9,9 +9,9 @@
   %body
     .container
       %h3= link_to 'cocktails', root_url, :class => 'logo'
-      %ul
-        %li= link_to 'Cocktails', cocktails_path
-        %li= link_to 'Ingredients', ingredients_path
+      %ul.tabs
+        %li= link_to 'Cocktails', admin_cocktails_path
+        %li= link_to 'Ingredients', admin_ingredients_path
 
     .container
       #notice= notice

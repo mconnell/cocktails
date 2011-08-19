@@ -1,5 +1,10 @@
 Cocktails::Application.routes.draw do
-  root :to => 'cocktails#index'
-  resources :cocktails
-  resources :ingredients
+  root :to => 'admin/cocktails#index'
+  resources :cocktails,   :only => [:show]
+  resources :ingredients, :only => [:show]
+  
+  namespace :admin do
+    resources :cocktails
+    resources :ingredients
+  end
 end

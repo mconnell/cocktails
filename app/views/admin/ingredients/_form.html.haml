@@ -1,0 +1,13 @@
+= simple_form_for [:admin, @ingredient] do |form|
+  %fieldset
+    %legend Cocktail Info
+    .clearfix
+      = form.label :name
+      .input
+        = form.text_field :name
+
+
+  .actions
+    = form.button :submit, :class=>'btn primary'
+    = link_to 'Back', admin_ingredients_path, :class=> 'btn'
+

@@ -1,0 +1,19 @@
+.page-header
+  %h1 Listing ingredients
+
+= link_to 'New ingredient', new_admin_ingredient_path, :class => 'btn primary'
+
+%table
+  %tr
+    %th(width="790") Name
+    %th
+    %th
+
+  - @ingredients.each do |ingredient|
+    %tr
+      %td= link_to ingredient.name, ingredient
+      %td(colspan='2')
+        = link_to 'Edit', [:edit, :admin, ingredient], :class => 'btn small'
+        = link_to 'Destroy', [:admin, ingredient], :confirm => 'Are you sure?', :method => :delete, :class => 'btn small'
+
+= link_to 'New ingredient', new_admin_ingredient_path, :class => 'btn primary'

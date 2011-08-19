@@ -1,10 +1,8 @@
-%p
-  %b name
-  = @cocktail.name
+.page-header
+  %h1= @cocktail.name
 
-- @cocktail.measured_ingredients.each do |measured_ingredient|
-  = measured_ingredient.ingredient.try(:name)
-  = measured_ingredient.measure
-
-= link_to 'Edit', edit_cocktail_path(@cocktail)
-= link_to 'Back', cocktails_path
+%ul.unstyled
+  - @cocktail.measured_ingredients.each do |measured_ingredient|
+    %li
+      = measured_ingredient.measure
+      = measured_ingredient.ingredient.try(:name)

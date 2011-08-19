@@ -1,4 +1,4 @@
-= simple_form_for @cocktail do |form|
+= simple_form_for [:admin, @cocktail] do |form|
   %fieldset
     %legend Cocktail Info
     .clearfix
@@ -16,7 +16,7 @@
 
   .actions
     = form.button :submit, :class=>'btn primary'
-    = link_to 'Back', cocktails_path, :class=> 'btn'
+    = link_to 'Back', admin_cocktails_path, :class=> 'btn'
 
 #form_templates
   = yield :form_templates
