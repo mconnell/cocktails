@@ -1,9 +1,10 @@
-= @cocktail.measured_ingredients.count
-
 = simple_form_for @cocktail do |form|
   %fieldset
     %legend Cocktail Info
-    = form.input :name
+    .clearfix
+      = form.label :name
+      .input
+        = form.text_field :name
 
   %fieldset
     %legend Ingredients
@@ -13,7 +14,9 @@
     = add_child_link 'Add Ingredient', :measured_ingredients
     = new_child_fields_template form, :measured_ingredients
 
-  = form.button :submit
+  .actions
+    = form.button :submit, :class=>'btn primary'
+    = link_to 'Back', cocktails_path, :class=> 'btn'
 
 #form_templates
   = yield :form_templates
