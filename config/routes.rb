@@ -1,5 +1,5 @@
 Cocktails::Application.routes.draw do
-  root :to => 'admin/cocktails#index'
+  root :to => 'cocktails#index'
   resources :cocktails,   :only => [:index, :show]
   resources :ingredients, :only => [:show]
   
