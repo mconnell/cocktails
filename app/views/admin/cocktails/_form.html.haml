@@ -6,6 +6,12 @@
       .input
         = form.text_field :name
 
+    .clearfix
+      = form.label :preparation
+      .input
+        = form.text_area :preparation, :rows => 5
+        %span.help-block Additional information, order of ingredients, type of glass..
+
   %fieldset
     %legend Ingredients
     #fields
