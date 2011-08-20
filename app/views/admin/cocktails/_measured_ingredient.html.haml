@@ -2,7 +2,7 @@
   .clearfix
     = form.label :ingredient_id, 'Ingredient'
     .input
-      - options = options_from_collection_for_select(Ingredient.all, :id, :name, form.object.id)
+      - options = options_from_collection_for_select(Ingredient.all, :id, :name, form.object.ingredient_id)
       = form.select :ingredient_id, options, :prompt => '-- Select an Ingredient --'
 
   .clearfix
