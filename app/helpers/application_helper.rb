@@ -23,4 +23,9 @@ module ApplicationHelper
   end
 
 
+  def navigation_li(controller_sym, &block)
+    options = (controller_sym == controller.controller_name.to_sym) ? {:class => 'active'} : {}
+    content_tag(:li, options, &block)
+  end
+
 end

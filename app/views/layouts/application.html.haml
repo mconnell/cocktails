@@ -10,7 +10,8 @@
     .container
       %h3= link_to 'cocktails', root_url, :class => 'logo'
       %ul.tabs
-        %li.active= link_to 'Cocktails', cocktails_path
+        = navigation_li(:cocktails){ link_to 'Cocktails', cocktails_path }
+        = navigation_li(:ingredients){ link_to 'Ingredients', ingredients_path }
 
     .container
       #notice= notice
