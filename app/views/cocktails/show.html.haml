@@ -1,8 +1,17 @@
 .page-header
   %h1= @cocktail.name
 
-%ul.unstyled
-  - @cocktail.measured_ingredients.each do |measured_ingredient|
-    %li
-      = measured_ingredient.measure
-      = measured_ingredient.ingredient.try(:name)
+.row
+  .span4.columns
+    %h2 Ingredients
+
+    %ul.unstyled
+      - @cocktail.measured_ingredients.each do |measured_ingredient|
+        %li
+          = measured_ingredient.measure
+          = link_to measured_ingredient.ingredient.name, measured_ingredient.ingredient
+
+
+  .span12.columns
+    %h3 Preparation
+    = simple_format @cocktail.preparation
