@@ -1,4 +1,4 @@
-class Admin::IngredientsController < ApplicationController
+class Admin::IngredientsController < AdminController
 
   def index
     @ingredients = Ingredient.order('name ASC')

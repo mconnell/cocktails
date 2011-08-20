@@ -1,4 +1,4 @@
-class Admin::CocktailsController < ApplicationController
+class Admin::CocktailsController < AdminController
 
   def index
     @cocktails = Cocktail.order('name ASC')
