@@ -1,10 +1,14 @@
 .page-header
-  %h1 Cocktails
+  %h1
+    Cocktails
+    %small Taste like candy!
 
 %table
   %tr
     %th(width="790") Name
+    %th I have the ingredients?
 
   - @cocktails.each do |cocktail|
     %tr
       %td= link_to cocktail.name, cocktail
+      %td= cocktail.can_be_made_from? my_ingredients

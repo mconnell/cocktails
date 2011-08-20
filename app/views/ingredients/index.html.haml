@@ -4,7 +4,13 @@
 %table
   %tr
     %th(width="790") Name
+    %td In my Cupboard?
 
   - @ingredients.each do |ingredient|
     %tr
       %td= link_to ingredient.name, ingredient
+      %td
+        - if !my_ingredients.include?(ingredient.id)
+          = link_to 'Add Ingredient', my_ingredient_path(ingredient), :method => :put, :class => 'btn primary small'
+        - else
+          = link_to 'Remove', my_ingredient_path(ingredient), :method => :delete, :class => 'btn small'
