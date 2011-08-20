@@ -7,11 +7,15 @@
     = csrf_meta_tag
 
   %body
-    .container
-      %h3= link_to 'cocktails', root_url, :class => 'logo'
-      %ul.tabs
-        = navigation_li(:cocktails){ link_to 'Cocktails', admin_cocktails_path }
-        = navigation_li(:ingredients){ link_to 'Ingredients', admin_ingredients_path }
+    .header
+      .container
+        .row
+          .span2
+            %h3= link_to 'cocktails', root_url, :class => 'logo'
+          .span8
+            %ul
+              = navigation_li(:cocktails){ link_to 'Cocktails', admin_cocktails_path }
+              = navigation_li(:ingredients){ link_to 'Ingredients', admin_ingredients_path }
 
     .container
       #notice= notice
