@@ -9,7 +9,7 @@ class Admin::CocktailsController < AdminController
   end
 
   def edit
-    @cocktail = Cocktail.find(params[:id])
+    @cocktail = Cocktail.find_by_url_slug(params[:id])
   end
 
   def create
@@ -23,7 +23,7 @@ class Admin::CocktailsController < AdminController
   end
 
   def update
-    @cocktail = Cocktail.find(params[:id])
+    @cocktail = Cocktail.find_by_url_slug(params[:id])
 
     if @cocktail.update_attributes(params[:cocktail])
       redirect_to admin_cocktails_url, :notice => 'cocktail was successfully updated.'
@@ -33,7 +33,7 @@ class Admin::CocktailsController < AdminController
   end
 
   def destroy
-    @cocktail = Cocktail.find(params[:id])
+    @cocktail = Cocktail.find_by_url_slug(params[:id])
     @cocktail.destroy
 
     redirect_to admin_cocktails_url

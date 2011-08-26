@@ -5,7 +5,7 @@ class CocktailsController < ApplicationController
   end
 
   def show
-    @cocktail = Cocktail.find(params[:id])
+    @cocktail = Cocktail.find_by_url_slug(params[:id])
   end
 
 end

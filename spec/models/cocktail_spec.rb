@@ -1,6 +1,18 @@
 require 'spec_helper'
 
 describe Cocktail do
+  describe "slug generation" do
+    it "generates a slug from the name" do
+      cocktail = Cocktail.create!(:name => 'Cooler')
+      assert_equal 'cooler', cocktail.url_slug
+    end
+
+    it "underscores whitespace" do
+      cocktail = Cocktail.create!(:name => "Super Cooler")
+      assert_equal 'super_cooler', cocktail.url_slug
+    end
+  end
+
   describe "validations" do
     it "requires a name" do
       cocktail = Cocktail.new(:name => nil)
