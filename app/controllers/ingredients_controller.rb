@@ -5,7 +5,7 @@ class IngredientsController < ApplicationController
   end
 
   def show
-    @ingredient = Ingredient.find(params[:id])
+    @ingredient = Ingredient.find_by_url_slug(params[:id])
   end
 
 end

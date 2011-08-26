@@ -5,7 +5,7 @@ class Admin::IngredientsController < AdminController
   end
 
   def show
-    @ingredient = Ingredient.find(params[:id])
+    @ingredient = Ingredient.find_by_url_slug(params[:id])
   end
 
   def new
@@ -13,7 +13,7 @@ class Admin::IngredientsController < AdminController
   end
 
   def edit
-    @ingredient = Ingredient.find(params[:id])
+    @ingredient = Ingredient.find_by_url_slug(params[:id])
   end
 
   def create
@@ -27,7 +27,7 @@ class Admin::IngredientsController < AdminController
   end
 
   def update
-    @ingredient = Ingredient.find(params[:id])
+    @ingredient = Ingredient.find_by_url_slug(params[:id])
 
     if @ingredient.update_attributes(params[:ingredient])
       redirect_to admin_ingredients_url, :notice => 'ingredient was successfully updated.'
@@ -37,7 +37,7 @@ class Admin::IngredientsController < AdminController
   end
 
   def destroy
-    @ingredient = Ingredient.find(params[:id])
+    @ingredient = Ingredient.find_by_url_slug(params[:id])
     @ingredient.destroy
 
     redirect_to admin_ingredients_url
