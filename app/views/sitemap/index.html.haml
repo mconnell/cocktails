@@ -3,13 +3,13 @@
   - @cocktails.each do |cocktail|
     %url
       %loc= cocktail_url(cocktail)
-      %lastmod= cocktail.updated_at.utc
+      %lastmod= cocktail.updated_at.iso8601
       %changefreq monthly
       %priority 0.5
 
   - @ingredients.each do |ingredient|
     %url
       %loc= ingredient_url(ingredient)
-      %lastmod=ingredient.updated_at.utc
+      %lastmod=ingredient.updated_at.iso8601
       %changefreq monthly
       %priority 0.5
