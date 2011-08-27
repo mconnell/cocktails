@@ -19,6 +19,17 @@ $(function() {
   });
 });
 
+Swizzle = {
+  toggleIngredient: function(element){
+    var className = 'has_ingredient';
+    if($(element).hasClass(className)){
+      $(element).removeClass(className)
+    } else {
+      $(element).addClass(className);
+    };
+  },
+}
+
 
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-25253534-1']);

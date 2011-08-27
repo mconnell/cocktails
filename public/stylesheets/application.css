@@ -25,13 +25,6 @@ div.header div.row {
   border-right: 1px solid #eee;
 }
 
-/*div.header ul li a:hover, div.header ul li.active a, div.header a.logo:hover {
-  background-color: #333;
-  background-color: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  text-decoration: none;
-}*/
-
 div.header ul {
   display: block;
   float: left;
@@ -54,6 +47,7 @@ div.header ul li a {
 div.header ul li a:hover {
   text-decoration: underline;
 }
+
 div.header ul li.active a {
   margin: 4px 9px 0 -1px;
   background-color: #fdfdfd;
@@ -61,4 +55,34 @@ div.header ul li.active a {
   -webkit-border-radius: 5px 5px 5px 5px;
   -moz-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
+}
+
+.ingredients .ingredient{
+  position: relative;
+}
+
+.ingredients .ingredient .view{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.ingredients .ingredient_box{
+  border: 1px solid #f5f5f5;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  padding: 14px;
+  display: block;
+  color: #404040;
+  line-height: 18px;
+  text-shadow: rgba(255, 255, 255, 0.496094) 0px 1px 0px;
+  position:relative;
+  text-decoration: none ;
+  margin-bottom: 18px;
+}
+
+.ingredients .ingredient_box.has_ingredient{
+  background-color: #eee;
+  border: 1px solid #ccc;
 }

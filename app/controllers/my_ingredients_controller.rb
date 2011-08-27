@@ -2,8 +2,18 @@ class MyIngredientsController < ApplicationController
 
   def update
     ingredient = Ingredient.find_by_url_slug(params[:id])
-    my_ingredients << ingredient.id
-    redirect_to :back
+    if my_ingredients.include?(ingredient.id)
+      remove_my_ingredient(ingredient)
+    else
+      my_ingredients << ingredient.id
+    end
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js   { render do |page|
+          page.call 'Swizzle.toggleIngredient', ".ingredient_#{ingredient.url_slug}" 
+        end
+      }
+    end
   end
 
   def destroy

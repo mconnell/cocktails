@@ -1,16 +1,13 @@
 .page-header
   %h1 Listing ingredients
 
-%table
-  %tr
-    %th(width="790") Name
-    %th In my Cupboard?
+.ingredients
+  .row
+    .span16.columns
+      %p
+        This is a collection of all the ingredients that can be found in the cocktails.
 
-  - @ingredients.each do |ingredient|
-    %tr
-      %td= link_to ingredient.name, ingredient
-      %td
-        - if !my_ingredients.include?(ingredient.id)
-          = link_to 'Add Ingredient', my_ingredient_path(ingredient), :method => :put, :class => 'btn primary small'
-        - else
-          = link_to 'Remove', my_ingredient_path(ingredient), :method => :delete, :class => 'btn small'
+  - @ingredients.each_slice(4) do |row_of_ingredients|
+    .row
+      - row_of_ingredients.each do |ingredient|
+        = ingredient_box ingredient

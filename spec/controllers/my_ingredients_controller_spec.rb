@@ -5,10 +5,24 @@ describe MyIngredientsController do
   before(:each){ request.env["HTTP_REFERER"] = 'place_i_came_from' }
 
   describe "PUT #update" do
-    it "adds the ingredient id to the session" do
+    before(:each) do
       Ingredient.stub(:find_by_url_slug).and_return(ingredient)
+    end
+
+    it "adds the ingredient id to the session" do
       put :update, :id => 'gin'
       assert_equal [123], session[:my_ingredients]
+    end
+
+    it "removes the ingredient if already exists" do
+      session[:my_ingredients] = [123]
+      put :update, :id => 'gin'
+      assert_equal [], session[:my_ingredients]
+    end
+
+    it "tells the ingredient to be toggled when xhr" do
+      xhr :put, :update, :id => 'gin'
+      assert_match response.body, /Swizzle\.toggleIngredient/ 
     end
   end
 
