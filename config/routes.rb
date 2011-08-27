@@ -9,4 +9,6 @@ Cocktails::Application.routes.draw do
     resources :cocktails
     resources :ingredients
   end
+
+  match '/sitemap.xml' => 'Sitemap#index'
 end
