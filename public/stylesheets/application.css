@@ -99,3 +99,7 @@ div.header ul li.active a {
   border-color: #bfbfbf;
   background-color: #ededed;
 }
+
+.ingredients_list .has_ingredient{
+  background-color: #eee;
+}

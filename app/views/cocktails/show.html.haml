@@ -5,9 +5,9 @@
   .span4.columns
     %h2 Ingredients
 
-    %ul.unstyled
+    %ul.unstyled.ingredients_list
       - @cocktail.measured_ingredients.each do |measured_ingredient|
-        %li
+        %li{ :class => (my_ingredients.include?(measured_ingredient.ingredient.id) ? 'has_ingredient' : '') }
           = measured_ingredient.measure
           = link_to measured_ingredient.ingredient.name, measured_ingredient.ingredient
 

@@ -7,6 +7,10 @@
       %p
         This is a collection of all the ingredients that can be found in the cocktails.
 
+      %p
+        Clicking on an ingredient box will toggle the ingredient as owned. You can use this to
+        see which cocktails you can make with just the ingredients you already own.
+
   - @ingredients.each_slice(4) do |row_of_ingredients|
     .row
       - row_of_ingredients.each do |ingredient|
